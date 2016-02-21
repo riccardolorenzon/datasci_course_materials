@@ -3,10 +3,11 @@ import urllib2 as urllib
 
 # See assignment1.html instructions or README for how to get these credentials
 
-api_key = "<Enter api key>"
-api_secret = "<Enter api secret>"
-access_token_key = "<Enter your access token key here>"
-access_token_secret = "<Enter your access token secret here>"
+api_key = "v6qQwHOb2fcqUjaKS4D2bv7AG"
+api_secret = "WfCUpTasY5aTpswHMmVk02D9VhifLGHyltqFeQany0e7fMlwoS"
+access_token_key = "242079429-isU5KhZ3R7aAdbaYvuFK5bA6ZrUjLcQWArtLHbc1"
+access_token_secret = "9jRnbf3iLJxZqY1ZIHuhCmCpj5DFwUYD7d12xUJMvegVr"
+
 
 _debug = 0
 
@@ -29,7 +30,7 @@ def twitterreq(url, method, parameters):
   req = oauth.Request.from_consumer_and_token(oauth_consumer,
                                              token=oauth_token,
                                              http_method=http_method,
-                                             http_url=url, 
+                                             http_url=url,
                                              parameters=parameters)
 
   req.sign_request(signature_method_hmac_sha1, oauth_consumer, oauth_token)
