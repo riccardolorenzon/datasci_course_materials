@@ -1,0 +1,6 @@
+SELECT SUM(A.value * B.value)
+FROM A, B
+WHERE
+  A.col_num = B.row_num
+  AND a.row_num = 2 AND b.col_num = 3
+GROUP BY a.row_num, b.col_num;

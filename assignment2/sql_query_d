@@ -1,0 +1,5 @@
+SELECT COUNT(*) FROM (
+  SELECT distinct(docid) FROM FREQUENCY
+  WHERE
+    term ='law' OR term = 'legal' and count >= 1)
+AS x;

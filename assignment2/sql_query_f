@@ -1,0 +1,13 @@
+SELECT COUNT(*) FROM (
+  SELECT docid FROM FREQUENCY
+  WHERE
+    term ='transactions' and count >= 1
+
+  INTERSECT
+
+  SELECT docid FROM FREQUENCY
+  WHERE
+    term ='world' and count >= 1
+
+    )
+AS x;
