@@ -90,19 +90,28 @@ What was the accuracy of your support vector machine model on the test data? Ent
 > test_predict_3=predict(model_3,newdata=data_testing)
 > table(pred = test_predict_3, true =data_testing$pop)
 
-BOH
-
 Construct a confusion matrix for each of the three methods using the table function. What appears to be the most common error the models make?
-> qplot(fsc_big,data=data)
-
-BOH
+> table(pred = test_predict_1, true = data_testing$pop) # Decision tree
+> table(pred = test_predict_2, true = data_testing $pop) # Random Forest
+> table(pred = test_predict_3, true = data_testing $pop) # Support Vector Machine
 
 After removing data associated with file_id 208, what was the effect on the accuracy of your svm model?
 Enter a positive or negative number representing the net change in accuracy,
 where a positive number represents an improvement in accuracy and a negative number represents a decrease in accuracy.
 
-BOH
+plot(data$chl_big, data $chl_small)
+plot(data $fsc_big, data $fsc_small)
+plot(data $fsc_perp, data $pe)
 
 The variables in the dataset were assumed to be continuous, but one of them takes on only a few discrete values, suggesting a problem. Which variable exhibits this problem?
 
-BOH
+data_2 = subset(data, data$file_id != 208)
+
+splits = splitdf(data_2, seed=1234)
+new_training = splits$data_training
+new_test = splits$data_testing
+
+new_svm_model = svm(fol, data=new_training)
+new_svm_predict = predict(new_svm_model, newdata=new_test)
+new_svm_result = new_svm_predict == new_test$pop
+summary(new_svm_result)
