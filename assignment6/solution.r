@@ -1,5 +1,3 @@
-# how do incidents vary by time of day?
-
 x <- sea$Occurred.Date.or.Date.Range.Start
 hr <- as.integer(substr(x, 12,13))
 AP <- substr(x, 21, 22)
